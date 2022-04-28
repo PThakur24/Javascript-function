@@ -1,0 +1,53 @@
+JAVASCRIPT
+
+1) MAP
+The map() method in JavaScript creates an array by calling a specific function on each element present in the parent array.
+
+Array.prototype.mymap=function(callback){
+	var arr=[];
+	for(let i=0; i<this.length;i++){
+		arr.push(callback(this[i]));
+	}
+	return arr;
+}
+var a = [5,2,3];
+var r =a.mymap(item => item*3)
+console.log(r);
+
+This give us array that invoked the mymap() method.
+
+2) FILTER
+The JavaScript filter array function is used to filter an array based on specified criteria.
+
+Array.prototype.myfilter =function(callback){
+	var arr = [];
+	for(let i=0; i<this.length;i++){
+		if(callback(this[i]) == true)
+		{
+			arr.push(this[i]);
+		}
+	}
+	return arr;
+}
+
+
+3) REDUCE
+reduce() method adds all the elements in the array and returns the sum.
+
+Array.prototype.myReduce=function(callback){
+	var a=0;
+	for(let i=0;i<this.length;i++){
+		callback(a=a+this[i]);
+	}
+	return a;
+}
+
+4) FOREACH
+The foreach() method is used to iterate over an array.
+
+let student=['John','sara'];
+student.foreach(myfunction);
+
+function myfunction(item){
+	console.log(item);
+}
